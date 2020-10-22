@@ -1,10 +1,10 @@
-const path = require("path");
-const slash = require("slash");
+const path = require('path');
+const slash = require('slash');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const pageTemplate = path.resolve("./src/templates/page.js");
+  const pageTemplate = path.resolve('./src/templates/page.js');
 
   const result = await graphql(`
     {
@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { allWordpressPage } = result.data;
 
   allWordpressPage.edges.forEach(edge => {
-    if (edge.node.status === "publish") {
+    if (edge.node.status === 'publish') {
       createPage({
         path: edge.node.link,
         component: slash(pageTemplate),

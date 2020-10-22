@@ -1,8 +1,8 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import citatimg from "../../images/tango_citat.svg";
-import { CitatWrapper } from "./styles/CitatStyles";
+import citatimg from '../../images/tango_citat.svg';
+import { CitatWrapper } from './styles/CitatStyles';
 
 const Citat = () => {
   const data = useStaticQuery(graphql`

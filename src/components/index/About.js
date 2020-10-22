@@ -1,7 +1,8 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+/* eslint-disable react/no-danger */
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import { AboutWrapper } from "./styles/AboutStyles";
+import { AboutWrapper } from './styles/AboutStyles';
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -23,12 +24,15 @@ const About = () => {
 
   return (
     <AboutWrapper>
-      <div className="containe-fluid">
+      <div className="container-fluid">
         <div className="row">
           <div
             className="col-md-6 aboutImage"
             style={{
-              backgroundImage: `url(${data.wordpressPage.featured_media.localFile.childImageSharp.fluid.src})`,
+              backgroundImage: `url(${
+                data.wordpressPage.featured_media.localFile.childImageSharp
+                  .fluid.src
+              })`,
             }}
           />
           <div className="col-md-6 aboutText">

@@ -1,7 +1,7 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import CTA from "./CTA";
+import CTA from './CTA';
 
 const CTAImages = () => {
   const {

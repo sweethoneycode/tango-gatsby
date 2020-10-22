@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
-import { NavigationWrapper } from "./styles/NavigationStyles";
+import { NavigationWrapper } from './styles/NavigationStyles';
 
 const Navigation = ({ menu }) => (
   <NavigationWrapper>
     <ul>
       {menu.items.map((item, i) => (
         <li key={i}>
-          <Link to={item.ul} activeClassName="nav-active">
+          <Link to={item.url} activeClassName="nav-active">
             {item.title}
           </Link>
           {item.wordpress_children ? (
@@ -32,7 +32,8 @@ const Navigation = ({ menu }) => (
   </NavigationWrapper>
 );
 
-Navigation.prototypes = {
+Navigation.propTypes = {
   menu: PropTypes.object,
 };
+
 export default Navigation;

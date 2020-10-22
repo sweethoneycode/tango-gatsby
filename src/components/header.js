@@ -1,10 +1,10 @@
-import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import tangoLogo from "../images/tango_logo.svg";
-import Navigation from "./Navigation";
+import Navigation from './Navigation';
 
-import { HeaderWrapper } from "./styles/HeaderStyles";
+import tangoLogo from '../images/tango_logo.svg';
+import { HeaderWrapper } from './styles/HeaderStyles';
 
 const Header = () => {
   const {
@@ -22,6 +22,7 @@ const Header = () => {
       menu: allWordpressWpApiMenusMenusItems(
         filter: { wordpress_id: { eq: 5 } }
       ) {
+        totalCount
         edges {
           node {
             items {

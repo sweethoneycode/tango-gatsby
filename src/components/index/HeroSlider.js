@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { useInterval } from "./useInterval";
+import React, { useState } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { useInterval } from './useInterval';
 
-import Slide from "./Slide";
+import Slide from './Slide';
 
 import {
   SliderWrapper,
   ButtonWrapper,
   Button,
-} from "./styles/HeroSliderStyles";
+} from './styles/HeroSliderStyles';
 
 const HeroSlider = () => {
   const {
@@ -85,10 +85,10 @@ const HeroSlider = () => {
           active={state.activeIndex === i}
         />
       ))}
-      <ButtonWrapper style={{ position: "absolute", left: 0 }}>
+      <ButtonWrapper style={{ position: 'absolute', left: 0 }}>
         <Button onClick={handlePrevClick}>&#9664;</Button>
       </ButtonWrapper>
-      <ButtonWrapper style={{ position: "absolute", right: 0 }}>
+      <ButtonWrapper style={{ position: 'absolute', right: 0 }}>
         <Button onClick={handleNextClick}>&#9654;</Button>
       </ButtonWrapper>
     </SliderWrapper>

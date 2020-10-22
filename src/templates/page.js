@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const PageTemplate = () => <div>Page</div>;
+const PageTemplate = () => <div>PageTemplate</div>;
+
 export default PageTemplate;

@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react';
+import { Link } from 'gatsby';
 
 import {
   StyledImg,
   CTAImage,
   CTAImageTextWrapper,
   CTAImageText,
-} from "./styles/CTAImagesStyles";
+} from './styles/CTAImagesStyles';
 
 const CTA = ({ image, link, text }) => (
   <CTAImage>
