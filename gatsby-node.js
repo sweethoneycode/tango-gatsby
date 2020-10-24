@@ -6,8 +6,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const pageTemplate = path.resolve("./src/templates/page.js");
-  const archiveTemplate = path.resolve("./templates/archive.js");
-  const postTemplate = path.resolve("./templates/post.js");
+  const archiveTemplate = path.resolve("./src/templates/archive.js");
+  const postTemplate = path.resolve("./src/templates/post.js");
 
   const result = await graphql(`
     {
