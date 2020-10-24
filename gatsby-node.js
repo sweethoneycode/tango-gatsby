@@ -78,7 +78,7 @@ exports.createPages = async ({ graphql, actions }) => {
         pathPrefix: `/trends/${catEdge.node.slug}`,
         component: slash(archiveTemplate),
         context: {
-          catId: catEdge.node.is,
+          catId: catEdge.node.id,
           catName: catEdge.node.name,
           catSlug: catEdge.node.slug,
           catCount: catEdge.node.count,
