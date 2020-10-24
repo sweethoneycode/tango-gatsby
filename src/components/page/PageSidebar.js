@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger */
 import React from "react";
 import { Link } from "gatsby";
+import { PropTypes } from "prop-types";
 
 import tangoMail from "../../images/tango-mail-icon.svg";
 import tangoPage from "../../images/tango-page-icon.svg";
@@ -83,6 +84,10 @@ const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
       </SidebarMenu>
     </SidebarWrapper>
   );
+};
+
+PageSidebar.propTypes = {
+  parent: PropTypes.object,
 };
 
 export default PageSidebar;
