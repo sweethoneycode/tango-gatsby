@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from "react";
 import { Link, graphql } from "gatsby";
 
@@ -33,21 +34,44 @@ const archiveTemplate = ({
         title: "trends",
       }}
     />
+
     <div className="container">
       <div className="row" style={{ marginBottom: "40px" }}>
         <ArchiveSidebar catId={catId} categories={categories} />
-        <pageContent className="col-lg-9">
+        <PageContent className="col-lg-9">
+          <Pagination
+            catSlug={catSlug}
+            page={humanPageNumber}
+            totalPages={numberOfPages}
+          />
           <h1 dangerouslySetInnerHTML={{ __html: catName }} />
           {allWordpressPost.edges.map((post) => (
             <article key={post.node.id} className="entry-content">
-              <Link to={"/trends/${post.node.slug}"}>
+              <Link to={`/trends/${post.node.slug}/`}>
                 <StyledH2
                   dangerouslySetInnerHTML={{ __html: post.node.title }}
                 />
               </Link>
+              <StyledDate
+                dangerouslySetInnerHTML={{
+                  __html: post.node.date.replace(/\W+/g, " "),
+                }}
+              />
+              <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+              <StyledReadMore to={`/trends/${post.node.slug}`}>
+                Read More
+              </StyledReadMore>
+              <div className="dot_divider">
+                <hr />
+              </div>
             </article>
           ))}
-        </pageContent>
+          <Pagination
+            catSlug={catSlug}
+            page={humanPageNumber}
+            totalPages={numberOfPages}
+          />
+        </PageContent>
       </div>
     </div>
   </Layout>
@@ -67,11 +91,12 @@ export const pageQuery = graphql`
           id
           title
           excerpt
+          slug
           date(formatString: "DD, MMM, YYYY")
         }
       }
     }
-    file(relativePath: { eq: "archive_headerImage.jpg" }) {
+    file(relativePath: { eq: "archive_headerimage.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 4000) {
           ...GatsbyImageSharpFluid_withWebp
