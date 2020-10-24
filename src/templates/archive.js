@@ -96,10 +96,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    file(relativePath: { eq: "archive_headerimage.jpg" }) {
+    file(relativePath: { eq: "archive_headerImage.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 4000) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }

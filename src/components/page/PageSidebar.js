@@ -1,16 +1,15 @@
 /* eslint-disable react/no-danger */
-import React from "react";
-import { Link } from "gatsby";
-import { PropTypes } from "prop-types";
+import React from 'react';
+import { Link } from 'gatsby';
 
-import tangoMail from "../../images/tango-mail-icon.svg";
-import tangoPage from "../../images/tango-page-icon.svg";
+import tangoMail from '../../images/tango-mail-icon.svg';
+import tangoPage from '../../images/tango-page-icon.svg';
 
 import {
   SidebarWrapper,
   SidebarMenu,
   EducationBadge,
-} from "./styles/PageSidebarStyles";
+} from './styles/PageSidebarStyles';
 
 const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
   const getParentContent = () =>
@@ -24,7 +23,7 @@ const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
         <p>
           Do you want to get updated when we publish new trend posts?
           <br />
-          Just email us with your name, companyname and mail adress{" "}
+          Just email us with your name, companyname and mail adress{' '}
           <a href="mailto:anders@tangobrandalliance.se">Anders Lindén</a>
         </p>
       </>
@@ -32,10 +31,10 @@ const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
       // Page with children, show menu
       <>
         <li className="sidebar-menu-header">
-          <img src={tangoPage} alt="tango-page" />{" "}
+          <img src={tangoPage} alt="tango-page" />{' '}
           <span dangerouslySetInnerHTML={{ __html: currentPage.title }} />
         </li>
-        {children.edges.map((child) => (
+        {children.edges.map(child => (
           <li key={child.node.id}>
             <Link to={child.node.link}>
               <span dangerouslySetInnerHTML={{ __html: child.node.title }} />
@@ -48,14 +47,14 @@ const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
   const getChildContent = () => (
     <>
       <li className="sidebar-menu-header">
-        <img src={tangoPage} alt="tango-page" />{" "}
+        <img src={tangoPage} alt="tango-page" />{' '}
         <span dangerouslySetInnerHTML={{ __html: parent.title }} />
       </li>
-      {parentChildren.edges.map((child) => (
+      {parentChildren.edges.map(child => (
         <li
           key={child.node.id}
           className={
-            currentPage.id === child.node.id ? "sidebar-highlighted" : ""
+            currentPage.id === child.node.id ? 'sidebar-highlighted' : ''
           }
         >
           {currentPage.id === child.node.id ? (
@@ -84,10 +83,6 @@ const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
       </SidebarMenu>
     </SidebarWrapper>
   );
-};
-
-PageSidebar.propTypes = {
-  parent: PropTypes.object,
 };
 
 export default PageSidebar;

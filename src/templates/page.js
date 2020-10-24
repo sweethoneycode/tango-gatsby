@@ -1,12 +1,12 @@
 /* eslint-disable react/no-danger */
-import React from "react";
-import { graphql } from "gatsby";
-import styled from "styled-components";
+import React from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import Layout from "../components/layout";
-import PageSidebar from "../components/page/PageSidebar";
-import BreadCrumb from "../components/BreadCrumb";
-import PageHero from "../components/PageHero";
+import Layout from '../components/layout';
+import PageSidebar from '../components/page/PageSidebar';
+import BreadCrumb from '../components/BreadCrumb';
+import PageHero from '../components/PageHero';
 
 const PageContent = styled.article`
   margin: 20px 0 0 0;
@@ -21,7 +21,7 @@ const PageTemplate = ({ data }) => (
     ) : null}
     <BreadCrumb parent={data.parent} />
     <div className="container">
-      <div className="row" style={{ marginBottom: "40px" }}>
+      <div className="row" style={{ marginBottom: '40px' }}>
         <PageSidebar
           parentChildren={data.parentChildren}
           currentPage={data.currentPage}

@@ -11,7 +11,7 @@ export const BreadCrumbWrapper = styled.div`
     margin: 0 10px 0 10px;
   }
 
-  span:hover {
+  span a:hover {
     color: #d22e26;
   }
 `;
