@@ -99,7 +99,7 @@ export const pageQuery = graphql`
     file(relativePath: { eq: "archive_headerImage.jpg" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 4000) {
-          ...GatsbyImageSharpFixed_withWebp
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
