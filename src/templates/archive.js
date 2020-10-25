@@ -38,7 +38,7 @@ const archiveTemplate = ({
     <div className="container">
       <div className="row" style={{ marginBottom: "40px" }}>
         <ArchiveSidebar catId={catId} categories={categories} />
-        <PageContent className="col-lg-9">
+        <PageContent className="col-lg-6">
           <Pagination
             catSlug={catSlug}
             page={humanPageNumber}
